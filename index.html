@@ -18,11 +18,11 @@
         <div class="col-md-12">
             <form>
                 <div class="form-group">
-                    <label for="hash">Hash do jogo</label>
+                    <label for="hash">Hash</label>
                     <input id="hash" type="text" class="form-control" v-model="hash"></input>
                 </div>
                 <div class="form-group">
-                    <label for="numOfGames">Number Play (Games prior to the entered hash )</label>
+                    <label for="numOfGames">Number Play </label>
                     <input id="numOfGames" type="number" value="5000" class="form-control" v-model="numOfGames"></input>
                 </div>
                 <button type="button" class="btn btn-primary btn-block" @click="extractHistory()">Processar</button>
@@ -34,7 +34,7 @@
                 <tbody>
                 <tr style="background-color: rgba(0,0,0,.075)">
                     <th scope="row" width="30%">
-                        Ocorrência de [Coringa] nos turnos:
+                        Lần lượt xuất hiện [Joker] :
                     </th>
                     <td style="text-align: left;" width="70%">
                         <span v-for="(turn, index) in result.jokers" :style="getStyle(turn)"
@@ -45,7 +45,7 @@
                 </tr>
                 <tr style="background-color: rgba(0,0,0,.075)">
                     <th scope="row" width="30%">
-                        Ocorrência de [A] nos turnos:
+                        Lần lượt xuất hiện A:
                     </th>
                     <td style="text-align: left;" width="70%">
                         <span v-for="(turn, index) in result.as" :style="getStyle(turn)" style="font-weight: bold;">
@@ -55,7 +55,7 @@
                 </tr>
                 <tr style="background-color: rgba(0,0,0,.075)">
                     <th scope="row" width="30%">
-                        Longest turn of [Joker] :
+                        Chuoi turn of [Joker] :
                     </th>
                     <td style="text-align: left;" width="70%">
                         <span :style="getStyle(result.greatJoker)" style="font-weight: bold;">
@@ -65,7 +65,7 @@
                 </tr>
                 <tr style="background-color: rgba(0,0,0,.075)">
                     <th scope="row" width="30%">
-                        Longest shift of [A] :
+                       Chuoi shift of [A] :
                     </th>
                     <td style="text-align: left;" width="70%">
                         <span :style="getStyle(result.greatA)" style="font-weight: bold;">
